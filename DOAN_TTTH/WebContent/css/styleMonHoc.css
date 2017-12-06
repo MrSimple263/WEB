@@ -1,0 +1,25 @@
+img{
+    margin: 0px;
+    width: 80%;
+}
+.panel-body{
+    padding: 0px;
+}
+.panel{
+margin-top: 10px;
+}
+.panel-footer{
+    width: 80%;
+}
+.panel-child{
+    width: 80%;
+    border:none;
+    background: none;
+    box-shadow: none;
+    border-image: none
+}
+
+.panel-heading{
+    background-color: #11842e;
+    color: white;
+}
