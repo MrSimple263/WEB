@@ -29,13 +29,38 @@ $(".panel-child").click(function () {
 $(".glyphicon-remove").click(function () {
     var obj=$(this);
     obj.attr("data-toggle","modal");
-    obj.attr("data-target","#myModal");
+    obj.attr("data-target","#myDel");
+    var str=$(obj.parent().parent().children().first()).text();
+    $(".frm-del").attr("action","GroupsubjectDel?id="+str.trim()+"");
+    
 });
 
-$(".glyphicon-plus,.glyphicon-pencil").click(function () {
+$(".glyphicon-plus").click(function () {
     var obj=$(this);
     obj.attr("data-toggle","modal");
     obj.attr("data-target","#myAdd");
+});
+
+$(".glyphicon-pencil").click(function () {
+    var obj=$(this);
+    var ar=[];
+    obj.attr("data-toggle","modal");
+    obj.attr("data-target","#myEdit");
+    
+    $.ajax({
+        url : 'GroupsubjectEdit',
+        data : {
+            id :$(obj.parent().parent().children().first()).text()
+        },
+        success : function(responseJson) {
+        	$.each(responseJson, function(index, item) { // Iterate over the JSON array.
+                   ar.push(item); // Create HTML <li> element, set its text content with currently iterated item and append it to the <ul>.
+            });
+        	$('input[name="id"]').val(ar[0]);
+        	$('.frmname').val(ar[1]);
+        	$('.frmimg').attr("src","imggroup/"+ar[2]+"");
+        }
+    });
 });
 $("#userinfor").click(function () {
     $("#infor").removeClass("infor");

@@ -1,25 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="StyleQLTT.css">
-    <title>Trang Quan Li Mon Hoc</title>
+    <link rel="stylesheet" href="css/StyleQLTT.css">
+    <title>Trang Quan Li Nhom Mon Hoc</title>
 </head>
 <body>
-
-</body>
-</html><div class="head">TRANG QUẢN LÍ CAC NHÓM MÔN HOC</div>
+<div class="head">TRANG QUẢN LÍ CÁC NHÓM MÔN HỌC</div>
 <div class="container">
     <table class="table table-hover">
         <thead>
         <tr>
-            <th>STT</th>
             <th>Mã Nhóm Môn</th>
             <th>Tên Nhóm Môn</th>
-            <th>Cac Môn</th>
             <th></th>
             <th></th>
             <th></th>
@@ -27,58 +24,27 @@
         </thead>
         <tbody>
         <tr>
-            <td>1</td>
-            <td>A-1625</td>
-            <td><a href="#">Lâp Trinh .NET</a></td>
-            <td>
-                <div>A01</div>
-                <div>A02</div>
-                <div>A03</div>
-            </td>
+            <td></td>
+            <td></td>
+            <td ></td>
+            <td ></td>
+            <td ><a href="#"class="glyphicon glyphicon-plus"></a></td>
+        </tr>
+	<c:forEach items="${group}" var="group">
+		<tr>
+            <td>${group.idsubject}</td>
+            <td><a href="#">${group.name}</a></td>
             <td ><a href="#" class="glyphicon glyphicon-pencil"></a></td>
             <td ><a href="#" class="glyphicon glyphicon-remove" ></a></td>
             <td ><a href="#"class="glyphicon glyphicon-plus"></a></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>B-1625</td>
-            <td><a href="#">Lâp Trinh JAVA</a></td>
-            <td>
-                <div>B01</div>
-                <div>B02</div>
-            </td>
-            <td ><a href="#" class="glyphicon glyphicon-pencil"></a></td>
-            <td ><a href="#" class="glyphicon glyphicon-remove" ></a></td>
-            <td ><a href="#"class="glyphicon glyphicon-plus"></a></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>C-1625</td>
-            <td><a href="#">Lâp Trinh PHP</a></td>
-            <td>
-                <div>C01</div>
-            </td>
-            <td ><a href="#" class="glyphicon glyphicon-pencil"></a></td>
-            <td ><a href="#" class="glyphicon glyphicon-remove" ></a></td>
-            <td ><a href="#"class="glyphicon glyphicon-plus"></a></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>D-1625</td>
-            <td><a href="#">Lâp Trinh Mobile</a></td>
-            <td>
-                <div>D01</div>
-                <div>D02</div>
-            </td>
-            <td ><a href="#" class="glyphicon glyphicon-pencil"></a></td>
-            <td ><a href="#" class="glyphicon glyphicon-remove" ></a></td>
-            <td ><a href="#"class="glyphicon glyphicon-plus"></a></td>
-        </tr>
+       </tr>
+	</c:forEach>
+       
         </tbody>
     </table>
 </div>
-<div class="notification">
-    <div id="myModal" class="modal fade" role="dialog">
+<div class="delete">
+    <div id="myDel" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -88,8 +54,11 @@
                     <p>Bạn muốn xóa chứ</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                <form method="post" class="frm-del">
+                	<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" >Yes</button>
+                </form>
+                    
                 </div>
             </div>
 
@@ -104,23 +73,53 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <span>From Add</span>
                 </div>
-                <div class="modal-body">
-                    <label>Mã Nhóm Môn Học</label>
-                    <input type="text" class="form-control" name="manhommonhoc"/>
+                <form action="GroupsubjectAdd" method="post"
+                enctype="multipart/form-data">
+                <div class="modal-body form-group">
                     <label>Tên Nhóm Môn Học</label>
-                    <input type="text" class="form-control" name="tennhommonhoc" />
+                    <input type="text" class="form-control" name="namegroup" />
+                    <label>Chọn Ảnh</label>
+                    <input type="file" class="form-control" name="file" accept="image/*" >
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                <div class="modal-footer form-group">
+                    <button type="submit" class="btn btn-primary">Yes</button>
                 </div>
+                </form>
             </div>
-
+				
         </div>
     </div>
-</div>
-<script src="jquery-3.2.1.min.js"></script>
+</div> 
+<div class="edit">
+    <div id="myEdit" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <span>From Add</span>
+                </div>
+                <form action="GroupsubjectEdit" method="post"
+                enctype="multipart/form-data">
+                <div class="modal-body form-group">
+                	<input type="hidden" class="form-control" name="id" />
+                    <label>Tên Nhóm Môn Học</label>
+                    <input type="text" class="form-control frmname" name="namegroup" />
+                    <div>Ảnh:</div>
+                    <div ><img alt="not" class="frmimg" style="width: 75px;height: 75px"></div>
+                    <label>Chọn Ảnh</label>
+                    <input type="file" class="form-control" name="file" accept="image/*" >
+                </div>
+                <div class="modal-footer form-group">
+                    <button type="submit" class="btn btn-primary">Yes</button>
+                </div>
+                </form>
+            </div>
+				
+        </div>
+    </div>
+</div> 
+<script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="JSfile.js"></script>
+<script src="js/JSfile.js"></script>
 </body>
 </html>

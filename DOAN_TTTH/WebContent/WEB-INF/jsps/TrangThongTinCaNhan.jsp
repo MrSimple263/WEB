@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,17 +12,18 @@
     .wrap-menu{
         position: fixed;
         height: 100%;
-        background: #2b669a;
+        background: #000;
     }
     a{
         color: white;
     }
     .canhan-menu{
         margin-top: 30px;
-        background: #419641;
+        background:transparent ;
         height: 50px;
         text-align: center;
         padding: 15px;
+        color:#ffff
     }
     .form-group{
         margin-top: 20px;
@@ -48,7 +50,7 @@
                     <img src="image/user.jpg" alt="" style="border-radius: 50%" class="img-responsive">
                 </div>
                 <div class="canhan-menu">
-                    <button id="userinfor">Quan Lí Thông Tin Cá Nhân</button>
+                    <button id="userinfor">Quản Lí Thông Tin Cá Nhân</button>
                 </div>
                 <div class="canhan-menu">
                     <button id="inclass">Các Lớp đang học</button>
@@ -59,46 +61,53 @@
         <div class="col-md-8" id="infor">
             <div class="wrap-content">
                 <form class="form-horizontal" action="">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="pwd">Password:</label>
+                <div class="form-group">
+                        <label class="control-label col-sm-2" for="fullname">Fullname:</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                            <input type="text" class="form-control" id="fullname" placeholder="Enter you name" 
+                            name="fullname" value="${user.fullname}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Email:</label>
+                        <label class="control-label col-sm-2" for="pwd">Password:</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                            <input type="password" class="form-control" id="pwd" 
+                            placeholder="Enter password" name="pass" 
+                            value="${user.pass}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Username:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="username" placeholder="Enter your username" 
+                            name="username" value="${user.username}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="Name">Email:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Name" placeholder="Enter your Name" name="name">
+                            <input type="text" class="form-control" id="Name" placeholder="Enter your email" 
+                            name="email" value="${user.email}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="SDT">SDT:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="SDT" placeholder="Enter your phone number" name="phone">
+                            <input type="text" class="form-control" id="SDT" placeholder="Enter your phone number" 
+                            name="phone" value="${user.phone}">
                         </div>
                     </div>
+        
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="NS">Birthday:</label>
+                        <label class="control-label col-sm-2" for="AD">Address:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="NS" placeholder="Enter your birthday " name="brthday">
+                            <input type="text" class="form-control" id="AD" placeholder="Enter your address " 
+                            name="address" value="${user.add}">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <div class="checkbox">
-                                <label><input type="checkbox" name="remember"> Remember me</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default">Submit</button>
+                            <button type="submit" class="btn btn-default">Cập nhật</button>
                         </div>
                     </div>
                 </form>
@@ -117,7 +126,7 @@
         </div>
     </div>
 </div>
-<script src="jquery-3.2.1.min.js"></script>
-<script src="JSfile.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/JSfile.js"></script>
 </body>
 </html>

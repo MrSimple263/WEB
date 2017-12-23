@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="StyleQLTT.css">
-    <title>Trang Quan Li Mon Hoc</title>
+    <title>Trang Quản Lí Môn Học</title>
 </head>
 <body>
-<div class="head">TRANG QUẢN LÍ CAC MÔN HOC</div>
+<div class="head">TRANG QUẢN LÍ CÁC MÔN HỌC</div>
 <div class="wrap-table">
     <div class="container">
         <div class="row">
@@ -29,15 +29,11 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>A-16</td>
-                        <td><a href="#">Lâp Trinh Winform</a></td>
-                        <td>A-1625</td>
-                        <td>
-                            <div>A01</div>
-                            <div>A02</div>
-                            <div>A03</div>
-                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td ><a href="#" class="glyphicon glyphicon-pencil"></a></td>
                         <td ><a href="#" class="glyphicon glyphicon-remove" ></a></td>
                         <td ><a href="#"class="glyphicon glyphicon-plus"></a></td>
