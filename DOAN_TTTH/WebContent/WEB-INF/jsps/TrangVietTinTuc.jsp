@@ -13,15 +13,24 @@
     <div class="row">
         <div class="col-md-8">
             <br>
-            <label for="tile">TIÊU ĐỀ</label>
-            <input type="text" name="Tile" class="form-control" id="tile"/>
-            <br/>
-            <label for="editor1">NÔI DUNG:</label>
-            <textarea name="editor1" id="editor1" rows="10" cols="80">
-                This is my textarea to be replaced with CKEditor.
-            </textarea>
-            <br/>
-            <button type="submit" name="publish" class="btn btn-primary"> Publish</button>
+            <form method="post" action="NewsAdd" enctype="multipart/form-data">
+            	 <label for="tile">TIÊU ĐỀ</label>
+            	<input type="text" name="title" class="form-control" id="tile"/>
+            	<br/>
+            	<label for="tile">MIÊU TẢ</label>
+            	<input type="text" name="des" class="form-control" id="des"/>
+            	<br/>
+            	<label>Chọn Ảnh</label>
+            	<input type="file" class="form-control" name="file" accept="image/*" >
+            	<br/>
+            	<label for="editor1">NÔI DUNG:</label>
+            	<textarea name="content" id="editor1" rows="10" cols="80">
+                	This is my textarea to be replaced with CKEditor.
+            	</textarea>
+            	<br/>
+            	<button type="submit" name="publish" class="btn btn-primary"> Publish</button>
+            </form>
+           
         </div>
 
     </div>

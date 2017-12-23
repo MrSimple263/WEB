@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="StyleQLTT.css">
+    <link rel="stylesheet" href="css/StyleQLTT.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Trang Quan Lí Tin Tức</title>
 </head>
@@ -14,9 +15,8 @@
     <table class="table table-hover">
         <thead>
         <tr>
-            <th>STT</th>
+            <th>Mã Tin Tức</th>
             <th>Tiêu Đề</th>
-            <th>Nội dung</th>
             <th>Ngày đăng</th>
             <th></th>
             <th></th>
@@ -25,37 +25,29 @@
         </thead>
         <tbody>
         <tr>
-            <td>1</td>
-            <td>Đón xuân rộn ràng - Ngập tràn niềm vui với khóa khai giảng đầu năm</td>
-            <td><a href="#">link</a></td>
-            <td>10/10/2017</td>
-            <td ><a href="/TrangVietTin.jsp" class="glyphicon glyphicon-pencil"></a></td>
-            <td ><a href="#" class="glyphicon glyphicon-remove" ></a></td>
-            <td ><a href="/TrangVietTin.jsp" class="glyphicon glyphicon-plus"></a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td ></td>
+            <td ></td>
+             <td ><a href="NewsAdd" ><span class="glyphicon glyphicon-plus"></span></a></td>
         </tr>
+       <c:forEach items="${listnews}" var="news">
         <tr>
-            <td>2</td>
-            <td>Thư cảm ơn quý Thầy Cô nhân ngày 20/11</td>
-            <td><a href="#">link</a></td>
-            <td>10/10/2017</td>
-            <td ><a href="TrangVietTin.jsp" class="glyphicon glyphicon-pencil"></a></td>
-            <td ><a href="" class="glyphicon glyphicon-remove" ></a></td>
-            <td ><a href="TrangVietTin.jsp"class="glyphicon glyphicon-plus"></a></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Trung Tâm Tin Học Tổng khai giảng các khóa học hè 2017 – 28/07/2017</td>
-            <td><a href="#">link</a></td>
-            <td>10/10/2017</td>
-            <td ><a href="TrangVietTin.jsp" class="glyphicon glyphicon-pencil"></a></td>
+            <td>${news.id}</td>
+            <td>${news.title}</td>
+            <td>${news.date}</td>
+            <td ><a href="" class="glyphicon glyphicon-pencil"></a></td>
             <td ><a href="#" class="glyphicon glyphicon-remove" ></a></td>
-            <td ><a href="TrangVietTin.jsp"class="glyphicon glyphicon-plus"></a></td>
+            <td ><a href="NewsAdd" ><span class="glyphicon glyphicon-plus"></span></a></td>
         </tr>
+       </c:forEach>
+       
         </tbody>
     </table>
 </div>
-<div class="notification">
-    <div id="myModal" class="modal fade" role="dialog">
+<div class="delete">
+    <div id="myDel" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -65,16 +57,19 @@
                     <p>Bạn muốn xóa chứ</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                <form method="post" class="frm-del">
+                	<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" >Yes</button>
+                </form>
+                    
                 </div>
             </div>
 
         </div>
     </div>
 </div>
-<script src="jquery-3.2.1.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="JSfile.js"></script>
+<script src="js/news_jsfile.js"></script>
 </body>
 </html>
