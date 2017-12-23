@@ -4,8 +4,9 @@ public class Subject {
 	int idsubject=-1;
 	String name=null;
 	String img=null;
-	int idgroup=-1;
+	String namegroup=null;
 	String infor=null;
+	int idgroup;
 	public Subject(){
 		
 	}
@@ -27,17 +28,23 @@ public class Subject {
 	public void setImg(String img) {
 		this.img = img;
 	}
-	public int getIdgroup() {
-		return idgroup;
-	}
-	public void setIdgroup(int idgroup) {
-		this.idgroup = idgroup;
-	}
 	public String getInfor() {
 		return infor;
 	}
 	public void setInfor(String infor) {
 		this.infor = infor;
+	}
+	public String getNamegroup() {
+		return namegroup;
+	}
+	public void setNamegroup(String namegroup) {
+		this.namegroup = namegroup;
+	}
+	public int getIdgroup() {
+		return idgroup;
+	}
+	public void setIdgroup(int idgroup) {
+		this.idgroup = idgroup;
 	}
 	
 	

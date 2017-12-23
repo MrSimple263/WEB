@@ -10,6 +10,7 @@ maxRequestSize = 1024 * 1024 * 50)
 public class Upload {
 	public  String upload(String folder,HttpServletRequest request){
 		String fileName=null;
+		String filename=null;
 		try {
 		
 			// Đường dẫn tuyệt đối tới thư mục gốc của w
@@ -30,7 +31,9 @@ public class Upload {
 			// Danh mục các phần đã upload lên (Có thể là nhiều file).
 			for (Part part : request.getParts()) {
 				fileName = extractFileName(part);
+				System.out.println(fileName);
 				if (fileName != null && fileName.length() > 0) {
+					filename=fileName;
 					String filePath = fullSavePath + File.separator + fileName;
 					System.out.println("Write attachment to file: " + filePath);
 					// Ghi vào file.
@@ -40,9 +43,7 @@ public class Upload {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		if(fileName.equals(""))
-		fileName=null;
-		return fileName;
+		return filename;
 	}
 	private String extractFileName(Part part) {
 	       // form-data; name="file"; filename="C:\file1.zip"
