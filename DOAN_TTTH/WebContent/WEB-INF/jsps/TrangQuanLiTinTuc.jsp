@@ -37,7 +37,7 @@
             <td>${news.id}</td>
             <td>${news.title}</td>
             <td>${news.date}</td>
-            <td ><a href="" class="glyphicon glyphicon-pencil"></a></td>
+            <td ><a href="NewsEdit?id=${news.id}" class="glyphicon glyphicon-pencil"></a></td>
             <td ><a href="#" class="glyphicon glyphicon-remove" ></a></td>
             <td ><a href="NewsAdd" ><span class="glyphicon glyphicon-plus"></span></a></td>
         </tr>

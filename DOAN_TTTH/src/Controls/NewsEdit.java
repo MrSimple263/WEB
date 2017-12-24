@@ -1,0 +1,79 @@
+package Controls;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import Model.DAO;
+
+@WebServlet("/NewsEdit")
+@MultipartConfig(fileSizeThreshold=1024*1024*2,maxFileSize = 1024 * 1024 * 10,
+maxRequestSize = 1024 * 1024 * 50)
+public class NewsEdit extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    public NewsEdit() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		DAO dao=new DAO();
+		Connection con=dao.CON();
+		Model.News news=new Model.News();
+		int id=Integer.parseInt(request.getParameter("id"));
+		String query="select * from news where IDNEWS="+id+"";
+		try{
+			PreparedStatement stm=con.prepareStatement(query);
+			ResultSet rs=stm.executeQuery();
+			while(rs.next()){	
+				news.setId(rs.getInt(1));
+				news.setTitle(rs.getString(2));
+				news.setDescri(rs.getString(3));
+				news.setContent(rs.getString(4));
+				news.setImg(rs.getString(5));
+				news.setDate(rs.getDate(6).toString());
+			}
+		}catch(SQLException ex){
+			
+		}
+		request.setAttribute("news",news);
+		request.getRequestDispatcher("WEB-INF/jsps/TrangSuaTin.jsp").forward(request, response);
+
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		int id=Integer.parseInt(request.getParameter("id"));
+		String title=request.getParameter("title");
+		String des=request.getParameter("des");
+		String content=request.getParameter("content");
+		String fileName=null;
+		Model.Upload upload=new Model.Upload();
+		fileName=upload.upload("imgnews", request);
+		Connection con=new Model.DAO().CON();
+		String query="call newsupdate(?,?,?,?,?)";
+		try{
+			PreparedStatement stm=con.prepareStatement(query);
+			stm.setInt(1, id);
+			stm.setString(2,title.trim());
+			stm.setString(3,des.trim());
+			stm.setString(4,content);
+			stm.setString(5,fileName);
+			stm.executeUpdate();
+		}catch(SQLException ex){
+			ex.printStackTrace();
+		}
+		response.sendRedirect("News");
+		
+	}
+
+}
