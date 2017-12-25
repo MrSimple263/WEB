@@ -7,6 +7,7 @@ $(document).ready(function () {
         alert($(".btn-number:visited").css("background-color"));
     })
     $(".frm-login").hide(); $($(this).parent().parent().parent().parent()).children().children("div.imgtile").addClass("magictime rotateUp");
+    $('#table').DataTable();
 });
 $("tile>h3>a").click(function () {
     var obj=$($(this).parent().parent().parent().parent()).children().children("div.imgtile");

@@ -7,12 +7,13 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/StyleQLTT.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
     <title>Trang Quan Lí Tin Tức</title>
 </head>
 <body>
 <div class="head">TRANG QUẢN LÍ TIN TỨC</div>
 <div class="container">
-    <table class="table table-hover">
+    <table class="table table-hover" id="table">
         <thead>
         <tr>
             <th>Mã Tin Tức</th>
@@ -70,6 +71,7 @@
 </div>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
 <script src="js/news_jsfile.js"></script>
 </body>
 </html>

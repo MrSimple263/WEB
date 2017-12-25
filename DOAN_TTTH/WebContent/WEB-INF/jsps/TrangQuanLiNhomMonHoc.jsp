@@ -7,12 +7,13 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/StyleQLTT.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
     <title>Trang Quan Li Nhom Mon Hoc</title>
 </head>
 <body>
 <div class="head">TRANG QUẢN LÍ CÁC NHÓM MÔN HỌC</div>
 <div class="container">
-    <table class="table table-hover">
+    <table class="table table-hover" id="table">
         <thead>
         <tr>
             <th>Mã Nhóm Môn</th>
@@ -120,6 +121,7 @@
 </div> 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
 <script src="js/JSfile.js"></script>
 </body>
 </html>

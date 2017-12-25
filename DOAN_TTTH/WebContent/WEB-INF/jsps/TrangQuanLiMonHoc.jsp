@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/StyleQLTT.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
     <title>Trang Quản Lí Môn Học</title>
 </head>
 <body>
@@ -15,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <table class="table table-hover">
+                <table class="table table-hover" id="table">
                     <thead>
                     <tr>
                         <th>Mã Môn</th>
@@ -75,6 +76,7 @@
 </div>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
 <script src="js/subject_jsfile.js"></script>
 </body>
 </html>
