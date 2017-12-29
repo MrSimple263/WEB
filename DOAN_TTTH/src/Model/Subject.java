@@ -1,7 +1,7 @@
 package Model;
 
 public class Subject {
-	int idsubject=-1;
+	int idsubject;
 	String name=null;
 	String img=null;
 	String namegroup=null;

@@ -5,48 +5,43 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Model.DAO;
-/**
- * Servlet implementation class Trangchu
- */
-@WebServlet("/Trangchu")
-public class Trangchu extends HttpServlet {
+
+
+@WebServlet("/TrangXemMonHoc")
+public class TrangXemMonHoc extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	DAO dao=new DAO();
-    public Trangchu() {
+   
+    public TrangXemMonHoc() {
         super();
-       
+        // TODO Auto-generated constructor stub
     }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Connection con=new Model.DAO().CON();
-		String query="select NAME,IDSUBJECT from subject limit 10";
-		ArrayList<String>names=new ArrayList<>();
-		ArrayList<String>ids=new ArrayList<>();
+		List<Model.Groupsubject> groups=new ArrayList<>();
+		String query="select * from group_subject";
 		try{
 			ResultSet rs=con.prepareStatement(query).executeQuery();
 			while(rs.next()){
-				names.add(rs.getString(1));
-				ids.add(""+rs.getInt(2));
+				Model.Groupsubject group=new Model.Groupsubject();
+				group.setIdsubject(rs.getInt(1));
+				group.setName(rs.getString(2).toString());
+				group.setSubjects();
+				groups.add(group);
 			}
 		}catch(SQLException ex){
 			ex.printStackTrace();
 		}
-		request.setAttribute("subject",names);
-		request.setAttribute("id",ids);
-		request.getRequestDispatcher("/WEB-INF/jsps/Giaodien.jsp").forward(request, response);
+		request.setCharacterEncoding("UTF-8");
+		request.setAttribute("groups",groups);
+		request.getRequestDispatcher("/WEB-INF/jsps/TrangMonHoc.jsp").forward(request, response);
 	}
-
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
-
 }

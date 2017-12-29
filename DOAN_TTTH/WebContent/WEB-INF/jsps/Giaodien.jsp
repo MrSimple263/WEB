@@ -345,37 +345,7 @@ form button {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" >
       <ul class="nav navbar-nav" >
-            <li class="none">
-                    <a href="#"><i class="glyphicon glyphicon-home" id="text" style="margin-left:140px"></i></a>
-                </li>
-                <li>
-                    <a href="TrangMonHoc.jsp">
-                      Chương trình đào tạo
-                    </a>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="text">
-                        Dịch vụ
-                    </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                    <a href="#">
-                                            <span class="glyphicons glyphicons-edit">Phát triển phần mềm</span>
-                                    </a>
-                            </li>
-                            <li>
-                                    <a href="#">
-                                            <span class="glyphicons glyphicons-edit">Đào tạo theo yêu cầu</span>
-                                    </a>
-                            </li>
-                            <li>
-                                    <a href="#">
-                                            <span class="glyphicons glyphicons-edit">Tư vấn quản lí dự án</span>
-                                            
-                                    </a>
-                            </li>
-                        </ul>
-                </li>
+                <li><a href="TrangXemMonHoc" id="text">Chương trình đào tạo</a></li>
                 <li><a href="TrangTinTuc.jsp" id="text">Tin tức</a></li>
                 <li><a href="#" id="text">Liên hệ</a></li>
       </ul>
@@ -394,7 +364,7 @@ form button {
                        <h4 class="modal-title" >Đăng nhập</h4>
                      </div>
                      <div class="modal-body" style="background-color:#0ae0f0">
-                       <form id="formlogin">
+                       <form id="formlogin" action="Login" method="post" >
                            <div class="user" >
                                 <label style="display:inline; font-size:20px;"><span style="display:block">Tài khoản</span></label>
                                 <input class ="form-control"  type="text" placeholder="Nhập tài khoản" name="taikhoan" required>
@@ -476,10 +446,10 @@ form button {
     <section class="khung">
         <div class="container">
             <div class="col-xs-4 col-sm-2 col-sm-offset-1 canh-noi-dung">
-                <a href="#">
+                <a href="XemInforMonHoc?id=${id[0]}">
                     <span class="nganh" style="background-color:#706D3C">
                         <span class="title"> 
-                            Đồ hoạ đa truyền thông
+                            ${subject[0]}
                             <br />
                             <img src="images/do_hoa_da_truyen_thong.png" class="bieu-tuong">
                         </span>
@@ -487,10 +457,10 @@ form button {
                 </a>
             </div>
             <div class="col-xs-4 col-sm-2  canh-noi-dung">
-                    <a href="#">
+                    <a href="XemInforMonHoc?id=${id[1]}">
                         <span class="nganh" style="background-color:#E65527">
                             <span class="title">
-                                Thiết kế Website 
+                                 ${subject[1]}
                                 <br />
                                 <img src="images/thiet_ke_website.png" class="bieu-tuong">
                             </span>
@@ -498,10 +468,10 @@ form button {
                     </a>
             </div>
             <div class="col-xs-4 col-sm-2 canh-noi-dung">
-                    <a href="#">
+                    <a href="XemInforMonHoc?id=${id[2]}">
                         <span class="nganh" style="background-color:#37A5B3">
                             <span class="title">
-                                Lập trình và CSDL
+                                 ${subject[2]}
                                 <br />
                                 <img src="images/Lap_trinh_va_CSDL.png" class="bieu-tuong">
                             </span>
@@ -509,10 +479,10 @@ form button {
                     </a>
             </div>
             <div class="col-xs-4 col-sm-2  canh-noi-dung">
-                    <a href="#">
+                    <a href="XemInforMonHoc?id=${id[3]}">
                         <span class="nganh" style="background-color:#363948">
                             <span class="title">
-                                Lập trình di động
+                                ${subject[3]}
                                 <br />
                                 <img src="images/lap_trinh_di_dong.png" class="bieu-tuong">
                             </span>
@@ -520,10 +490,10 @@ form button {
                     </a>
             </div>
             <div class="col-xs-4 col-xs-offset4 col-sm-2 col-sm-offset-0 canh-noi-dung">
-                    <a href="#">
+                    <a href="XemInforMonHoc?id=${id[4]}">
                         <span class="nganh" style="background-color:#716384">
                             <span class="title">
-                                Kiểm thử phần mềm
+                                 ${subject[4]}
                                 <br />
                                 <img src="images/Kiem_thu_phan_mem.png" class="bieu-tuong">
                             </span>
@@ -531,10 +501,10 @@ form button {
                     </a>
             </div>
             <div class="col-xs-4 col-sm-2 col-sm-offset-1 canh-noi-dung">
-                    <a href="#">
+                    <a href="XemInforMonHoc?id=${id[5]}">
                         <span class="nganh" style="background-color:#f0b906">
                             <span class="title">
-                                Mạng máy tính
+                                ${subject[5]}
                                 <br />
                                 <img src="images/Mang_may_tinh.png" class="bieu-tuong">
                             </span>
@@ -542,10 +512,10 @@ form button {
                     </a>
             </div>
             <div class="col-xs-4 col-sm-2 col-sm-offset-4 col-sm-2 col-sm-offset-0 canh-noi-dung">
-                    <a href="#">
+                    <a href="XemInforMonHoc?id=${id[6]}">
                         <span class="nganh" style="background-color:#66e986">
                             <span class="title">
-                                Internet Marketing
+                                 ${subject[6]}
                                 <br />
                                 <img src="images/Internet_Marketing.png" class="bieu-tuong">
                             </span>
@@ -553,10 +523,10 @@ form button {
                     </a>
             </div>
             <div class="col-xs-4 col-sm-2 canh-noi-dung">
-                    <a href="#">
+                    <a href="XemInforMonHoc?id=${id[7]}">
                         <span class="nganh" style="background-color:#3c7cdb">
                             <span class="title">
-                            Lập trình cho trẻ em
+                            ${subject[7]}
                                 <br />
                                 <img src="images/logo-prokids.png" class="bieu-tuong">
                             </span>
@@ -564,10 +534,10 @@ form button {
                     </a>
             </div>
             <div class="col-xs-4 col-sm-2  canh-noi-dung">
-                    <a href="#">
+                    <a href="XemInforMonHoc?id=${id[8]}">
                         <span class="nganh" style="background-color:#0b6879">
                             <span class="title">
-                            Tin học văn phòng
+                             ${subject[8]}
                                 <br />
                                 <img src="images/Tin_hoc_van_phong.png" class="bieu-tuong">
                             </span>
@@ -588,101 +558,6 @@ form button {
         </div>
     </section><!--end Chuong trinh daotao-->
     <!--tien ich-->
-    <div id="tien-ich" class="container" style="text-align:center">
-            <h1 class="tieu-de-muc">Tiện ích và hỗ trợ</h1>
-            <img src="images/ngoisao_cam.png" width="250px">
-    </div>
-    <section class="tienich" >
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-6 col-sm-2 canh-le ">
-                    <a href="#">
-                        <img src="images/icon_1.jpg" alt="tien ich 1">
-                    </a>
-                    
-                </div>
-                <div class="col-xs-6 col-sm-2 canh-le ">
-                        <a href="#">
-                            <h4>Ứng dụng CNTT CB và NC</h4>
-                        </a>
-                        <p style="font-size:14px;text-align:justify">Kho đề thi mẫu và video hướng dẫn 
-                                giải đề giúp học viên ôn tập cho kì thi chứng chỉ Ứng Dụng CNTT.
-                        </p>
-                </div>
-                <div class="col-xs-6 col-sm-2 canh-le">
-                    <a href="#">
-                        <img src="images/icon_2.jpg" alt="tien ich 2">
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-2 canh-le ">
-                        <a href="#">
-                            <h4>Tra cứu điểm thi</h4>
-                        </a>
-                        <p style="font-size:14px;text-align:justify">Hỗ trợ học viên tra cứu kết qua thi
-                            được Trung Tâm thông báo sau ngày thi 2 tuần.
-                        </p>
-                </div>
-                <div class="col-xs-6 col-sm-2 canh-le">
-                    <a href="#">
-                        <img src="images/icon_3.jpg" alt="tien ich 3">
-                    </a>
-                    
-                </div>
-                <div class="col-xs-6 col-sm-2 canh-le ">
-                        <a href="#">
-                            <h4>Tài liệu học tập</h4>
-                        </a>
-                        <p style="font-size:14px;text-align:justify">Chia sẻ kho tài liệu học tập miễn phí , hữu ích với nhiều
-                            lĩnh vực phong phú.
-                        </p>
-                </div>
-            </div>
-            <div class="row">
-                    <div class="col-xs-6 col-sm-2 canh-le ">
-                            <a href="#" style="top:20px">
-                                <img src="images/icon_4.jpg" alt="tien ich 4">
-                            </a>
-                            
-                    </div>
-                    <div class="col-xs-6 col-sm-2 canh-le ">
-                            <a href="#">
-                                <h4>Lớp học trực tuyến</h4>
-                            </a>
-                            <p style="font-size:14px;text-align:justify">Các lớp học bổ sung kiên thức CNTT,
-                                học trực tiếp với giáo viên qua mạng Internet.
-                            </p>
-                    </div>
-                    <div class="col-xs-6 col-sm-2 canh-le ">
-                            <a href="#" style="top:20px">
-                                <img src="images/icon_5.jpg" alt="tien ich 5">
-                            </a>
-                            
-                    </div>
-                    <div class="col-xs-6 col-sm-2 canh-le ">
-                            <a href="#">
-                                <h4>Tra cứu chứng chỉ</h4>
-                            </a>
-                            <p style="font-size:14px;text-align:justify">Hỗ trợ học viên tra cứu chứng
-                                chi được Trung Tâm cấp sau ngày thi 1,5 tháng.
-                            </p>
-                    </div>
-                    <div class="col-xs-6 col-sm-2 canh-le ">
-                            <a href="#" style="top:20px">
-                                <img src="images/icon_6.jpg" alt="tien ich 6">
-                            </a>
-                            
-                    </div>
-                    <div class="col-xs-6 col-sm-2 canh-le ">
-                            <a href="#">
-                                <h4>Giới thiệu việc làm</h4>
-                            </a>
-                            <p style="font-size:14px;text-align:justify">Cầu nối giúp học viên tiếp cận các cơ 
-                                hội việc làm từ những doanh nghiệp hàng đầu.
-                            </p>
-                    </div>
-            </div>
-        </div>
-    </section><!--end.tien-ich-->
     <div id="tin-tuc" class="container" style="text-align:center">
             <h1 class="tieu-de-muc">Tin tức sự kiện</h1>
             <img src="images/ngoisao_cam.png" width="250px">

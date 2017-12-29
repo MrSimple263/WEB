@@ -31,7 +31,6 @@ public class Upload {
 			// Danh mục các phần đã upload lên (Có thể là nhiều file).
 			for (Part part : request.getParts()) {
 				fileName = extractFileName(part);
-				System.out.println(fileName);
 				if (fileName != null && fileName.length() > 0) {
 					filename=fileName;
 					String filePath = fullSavePath + File.separator + fileName;

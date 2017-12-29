@@ -34,45 +34,26 @@
 				<div class="col-md-4">
                 <div class="wrap" style="background-color:Tomato;">
                 	<div class="glyphicon glyphicon-user"></div>
-                	<a href=""> 
-                		Quản Lí Nhân Sự
+                	<a href="Document?id=${id}"> 
+                		Quản Lí Tài Liệu
                 	</a>
                 </div>
          </div>
          <div class="col-md-4">
                 <div class="wrap" style="background-color:Orange;">
                 	<div class="glyphicon glyphicon-list-alt"></div>
-                	<a href="News"> 
-                		Quản Lí Tin Tức
+                	<a href="Video?id=${id}"> 
+                		Quản Lí Video
                 	</a>
                 </div>
          </div>
           <div class="col-md-4">
                 <div class="wrap" style="background-color:MediumSeaGreen;">
                 	<div class="glyphicon glyphicon-list" ></div>
-                	<a href="Groupsubject"> 
-                		Quản Lí Nhóm Học
+                	<a href="User?id=${id}"> 
+                		Quản Lí Học Viên
                 	</a>
                 	</div>
-         </div>
-	</div>
-	<div class="row">
-		<div class="col-md-4" >
-                <div class="wrap" style="background-color:SlateBlue;">
-                	<div class="glyphicon glyphicon-edit" ></div>
-                	<a href="Subject"> 
-                		Quản Lí Môn Học
-                	</a>
-                </div>
-         </div>
-         
-         <div class="col-md-4" >
-                <div class="wrap" style="background-color:Red;">
-                	<div class="glyphicon glyphicon-leaf" ></div>
-                	<a href="Class"> 
-                		Quản Lí Nhóm Lớp Học
-                	</a>
-                </div>
          </div>
 	</div>
 			</div>

@@ -44,6 +44,26 @@ public class Trangcanhan extends HttpServlet {
 			
 		}
 		request.setAttribute("user", user);
+		
+		String query2="select * from users";
+		try{
+		PreparedStatement stm=con.prepareStatement(query);
+		ResultSet rs=stm.executeQuery();
+		while(rs.next()){
+			user.setId(rs.getInt(1));
+			user.setUsername(rs.getString(2));
+			user.setPass(rs.getString(3));
+			user.setFullname(rs.getString(4));
+			user.setAdd(rs.getString(5));
+			user.setPhone(rs.getString(6));
+			user.setEmail(rs.getString(7));
+			user.setRole(Integer.parseInt(rs.getString(8)));
+			user.setImg(rs.getString(9));
+		}
+		}catch(SQLException ex){
+			
+		}
+		
 		request.getRequestDispatcher("/WEB-INF/jsps/TrangThongTinCaNhan.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

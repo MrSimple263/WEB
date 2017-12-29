@@ -41,33 +41,7 @@
     </div>
 </nav>
 <div class="container">
-	<c:forEach items="${groups}" var="gr">
-	<div class="row">
-        <div class="col-md-12">
-            <div class="panel">
-                <div class="panel-heading"><h2>${gr.name}</h2></div>
-                <div class="panel-body">
-                    <div class="container">
-                        <div class="row">
-                        	<c:forEach items="${gr.subjects}" var="sb">
-                        		<div class="col-md-3 col-xs-4 magictime ">
-                                <div class="panel panel-child">
-                                    <div class="panel-body">
-                                    <a href="XemInforMonHoc?id=${sb.idsubject}">
-                                    	<img src="imgsubject/${sb.img}" alt="image not found" class="img-responsive">
-                                    </a>
-                                    </div>
-                                    <div class="panel-footer" style="text-align: center">${sb.name}</div>
-                                </div>
-                            </div>
-                        	</c:forEach>  
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</c:forEach>
+	${infor}
 </div>
 <div class="footer">
     <div class="jumbotron">

@@ -7,6 +7,14 @@ public class Lop {
 	int idteacher;
 	String tinhtrang;
 	String namete;
+	String namesubject;
+	
+	public String getNamesubject() {
+		return namesubject;
+	}
+	public void setNamesubject(String namesubject) {
+		this.namesubject = namesubject;
+	}
 	public String getNamete() {
 		return namete;
 	}

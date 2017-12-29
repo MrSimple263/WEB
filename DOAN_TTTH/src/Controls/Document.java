@@ -1,6 +1,11 @@
 package Controls;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,8 +23,25 @@ public class Document extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		int id=Integer.parseInt(request.getParameter("id"));
+		Connection con=new Model.DAO().CON();
+		try{
+			String query="select * from document where IDCLASS="+id+"";
+			ResultSet rs=con.prepareStatement(query).executeQuery();
+			ArrayList<Model.Document> docs=new ArrayList<>();
+			while(rs.next()){
+				Model.Document doc=new Model.Document();
+				doc.setId(rs.getInt(1));
+				doc.setDes(rs.getString(2));
+				doc.setLink(rs.getString(3));
+				docs.add(doc);
+			}
+			request.setAttribute("doc",docs);
+			request.setAttribute("idclass",id);
+		}catch(SQLException ex){
+			ex.printStackTrace();
+		}
+		request.getRequestDispatcher("/WEB-INF/jsps/Document.jsp").forward(request, response);
 	}
 
 }
