@@ -4,7 +4,8 @@ $(document).ready(function(){
 $(".glyphicon-remove").click(function () {
 	    var obj=$(this);
 	    obj.attr("data-toggle","modal");
-	    obj.attr("data-target","#myDell");
+	    obj.attr("data-target","#myDel");
 	    var str=$(obj.parent().parent().children().first()).text();
-	    $(".frm-del").attr("action","ClassDell?id="+str.trim()+"");    
+	    var idclass=$('#idclass').text();
+	    $(".frm-del").attr("action","VideoDel?id="+str.trim()+"&idclass="+idclass+"");    
 	});

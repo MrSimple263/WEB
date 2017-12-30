@@ -10,8 +10,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
-    <link rel="stylesheet" href="Signin.css"/>
-    <script type="text/javascript" src="Signin.js"></script>
 </head>
 <script>
 $(document).ready(function() {
@@ -125,7 +123,7 @@ span.psw {
             </div>
         </div>
     </div>
-    <form  id="myform"  action="UserAdd" method="post">
+    <form  id="myform"  action="UserEdit" method="post">
         <div class="container" style="background-color:plum;">
                 <h2>Đăng kí <span class="glyphicon glyphicon-pencil"> </span></h2>    
         </div>
@@ -138,58 +136,60 @@ span.psw {
                         <label style="display:inline; font-size:20px;"><span style="display:block">Họ và Tên</span></label>
                 </div>
                     <div class="col-sm-9">
-                        <input  class ="form-control" type="text" placeholder="Họ và Tên" name="name" required>
+                        <input type="hidden" value="${user.id}" name="id">
+                        <input  class ="form-control" type="text" value="${user.fullname}" name="name" required>
+                    </div> 
+                  <div class="col-sm-3">
+                        <label style="display:inline; font-size:20px;"><span style="display:block">Username:</span></label>
+                </div>
+                    <div class="col-sm-9">
+                        <input  class ="form-control" type="text" value="${user.username}" name="username" required>
                     </div> 
                 <div class="col-sm-3">
                     <label style="display:inline; font-size:20px;"><span style="display:block"> Mật khẩu</span></label>
                 </div>
                 <div class="col-sm-9">
-                    <input class ="form-control" type="password" placeholder="Nhập mật khẩu" name="matkhau" value="12345678" required>
-                </div>
-                <div class="col-sm-3">
-                        <label style="display:inline; font-size:20px;"><span style="display:block">Nhập lại mật khẩu</span></label>
-                </div>
-                <div class="col-sm-9"> 
-                        <input class ="form-control" type="password" placeholder="Nhập lại mật khẩu" value="12345678" name="nhaplaimatkhau" required>
+                    <input class ="form-control" type="text" placeholder="Nhập mật khẩu" name="matkhau" value="${user.pass}" required>
                 </div>
                    <div class="col-sm-3">
                         <label style="display:inline; font-size:20px;"><span style="display:block">Phân Quyền:</span></label>
                 </div>
                     <div class="col-sm-9">
-                            <select name="role" style="padding:6px; margin-top:9px" required> 
+                            <select name="role" id="role" style="padding:6px; margin-top:9px" required> 
                                     <option value="1">Admin</option> 
                                     <option value="2">Giảng Viên</option>
                                     <option value="3">Học sinh</option> 
                             </select> 
                     </div>
-               
                     <div class="col-sm-3">
                         <label style="display:inline; font-size:20px;"><span style="display:block">Địa chỉ Mail</span></label>
                 </div>
                 <div class="col-sm-9">
-                        <input type="text" placeholder=" Nhập địa chỉ Mail " name="email" required>
+                        <input type="text" value="${user.email}" name="email" required>
                 </div>    
                 <div class="col-sm-3">
                         <label style="display:inline; font-size:20px;"><span style="display:block">Phone</span></label>
                 </div>
                 <div class="col-sm-9">
-                        <input class ="form-control" type="text" placeholder="Nhập số Phone" name="phone" required>
+                        <input class ="form-control" type="text" value="${user.phone}" name="phone" required>
                 </div>
                  <div class="col-sm-3">
                         <label style="display:inline; font-size:20px;"><span style="display:block">Địa Chỉ</span></label>
                 </div>
                 <div class="col-sm-9">
-                        <input class ="form-control" type="text" placeholder="Nhập Địa Chỉ" name="add" required>
+                        <input class ="form-control" type="text" value="${user.add}" name="address" required>
                 </div>
                 </div>
             </div>  
             <div class="row">
                 <div class="col-sm-7"></div>
                 <div class="col-sm-5">
-                        <button type="submit" class="signin" >Đăng ký </button>
+                        <button type="submit" class="signin" >Update </button>
                 </div>   
             </div> 
     </form>
-      
+     <SCRIPT type="text/javascript">
+               		$("#role").val("${user.role}");
+      </SCRIPT>
 </body>
 </html>

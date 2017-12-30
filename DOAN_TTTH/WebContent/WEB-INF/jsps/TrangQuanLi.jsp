@@ -34,7 +34,7 @@
 				<div class="col-md-4">
                 <div class="wrap" style="background-color:Tomato;">
                 	<div class="glyphicon glyphicon-user"></div>
-                	<a href=""> 
+                	<a href="User"> 
                 		Quản Lí Nhân Sự
                 	</a>
                 </div>

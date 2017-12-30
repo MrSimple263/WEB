@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -41,19 +42,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+            <a class="navbar-brand" href="Trangchu"><span class="glyphicon glyphicon-home"></span></a>
         </div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Lich khai giảng</a></li>
-                <li><a href="#">Chương trình dào tạo</a></li>
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Tin tức</a></li>
-                <li><a href="#">Hướng dẫn thanh toán </a></li>
+                <li><a href="TrangXemMonHoc">Chương trình dào tạo</a></li>
+                <li><a href="XemTinTuc">Tin tức</a></li>
                 <li><a href="#">Liên hệ</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="login.html"><span class="glyphicon glyphicon-log-in" id="bnt-login"></span> Login</a></li>
             </ul>
         </div>
@@ -69,9 +66,6 @@
 
         <div class="carousel-inner">
             <div class="item active">
-                <img src="http://csc.edu.vn/data/images/slider/lap-trinh/slide-tkg-ltdd-k235.png" alt="Los Angeles">
-            </div>
-            <div class="item">
                 <img src="http://csc.edu.vn/data/images/slider/lap-trinh/tong-khai-giang2-k235.png" alt="Chicago">
             </div>
             <div class="item">
@@ -92,82 +86,25 @@
     <div class="row">
         <div class="col-md-8">
             <div class="tin-tuc">
-                <div class="container">
+            <c:forEach items="${listnews}" var="n">
+            	<div class="container">
                     <div class="row">
                         <div class="col-md-3 col-xs-5">
                             <div class="imgtile">
-                                <img src="http://csc.edu.vn/data/images/tin-tuc/tin-hoc-van-phong/tin%20tuc%20hoat%20dong/Donxuan1702_280x210.png"
+                                <img src="imgnews/${n.img}"
                                      alt="not img" class="img-responsive">
                             </div>
                         </div>
                         <div class="col-md-5 col-xs-7 tile">
-                            <tile><h3><a href="http://csc.edu.vn/tin-tuc/tin-tuc-trung-tam-tin-hoc/thong-bao-nghi-le-quoc-khanh-2-9-910">Đón xuân rộn ràng - Ngập tràn niềm vui với khóa khai giảng đầu năm</a>
+                            <tile><h3><a href="Xemnoidungtin?id=${n.id}">${n.title}</a>
                             </h3>
                             </tile>
-                            <span>Trong dịp Xuân Đinh Dậu 2017, khi đăng ký khóa học khai giảng 17/02/2016
-                    bạn sẽ có cơ hội nhận được những quà tặng hấp dẫn.
-                </span>
-                            <a href="#" class="xen-tiep">Xem tiep</a>
+                            <span>${n.descri}</span>
+                            <a href="Xemnoidungtin?id=${n.id}" class="xen-tiep">Xem tiep</a>
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-xs-5">
-                            <div class="imgtile">
-                                <img src="http://csc.edu.vn/data/images/tin-tuc/lap-trinh-csdl/tin-tuc-hoat-dong-lap-trinh/trung-tam-tin-hoc-tong-khai-giang-khoa-he-1.png"
-                                     alt="not img" class="img-responsive">
-                            </div>
-                        </div>
-                        <div class="col-md-5 col-xs-7">
-                            <tile><h3><a href="#">Trung Tâm Tin Học Tổng khai giảng các khóa học hè 2017 –
-                                28/07/2017</a></h3>
-                            </tile>
-                            <span>
-                    Ngày 28/07/2017, Trung Tâm Tin Học Tổng khai giảng các khóa học Lập
-                    trình viên, Kỹ thuật viên và các lớp chuyên đề với lịch học Sáng – chiều – tối và cuối tuần.
-                </span>
-                            <a href="#" class="xen-tiep">Xem tiep</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-xs-5">
-                            <div class="imgtile">
-                                <img src="http://csc.edu.vn/data/images/tin-tuc/tin-tuc-chung-trung-tam/Ki-niem-30-nam/t3h-noi-day-toi-biet-the-nao-la-code-thumbnail-small.jpg"
-                                     alt="not img" class="img-responsive">
-                            </div>
-                        </div>
-                        <div class="col-md-5 col-xs-7">
-                            <tile><h3><a href="#">Thư cảm ơn quý Thầy Cô nhân ngày 20/11</a></h3></tile>
-                            <span>
-		            "Tôn sư, trọng đạo" từ xa xưa đã là đạo lý, là nét đẹp văn hóa của người Việt chúng ta.
-                    Trong không khí chào mừng ngày truyền thống Nhà giáo Việt Nam 20-11,
-                </span>
-                            <a href="#" class="xen-tiep">Xem tiep</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-xs-5">
-                            <div class="imgtile">
-                                <img src="http://csc.edu.vn/data/images/tin-tuc/do-hoa/hoc-thu-hoi-thao/hoc-thu-13-2-2017/Hocthu_13_2_2017_avatar_01.png"
-                                     alt="not img" class="img-responsive">
-                            </div>
-                        </div>
-                        <div class="col-md-5 col-xs-7">
-                            <tile><h3><a href="#"> 30 suất học Thiết kế Đồ họa miễn phí </a></h3></tile>
-                            <span>
-                    Thiết kế Đồ họa không còn quá xa lạ, thậm chí hiện hữu rất nhiều ở xung
-                    quanh chúng ta hàng ngày. Vấn đề ở đây là chúng ta vẫn chưa hình dung được hết cái hay,
-                    cái đẹp của Đồ họa cũng như lợi ích mà nghề Thiết kế đem lại
-                </span>
-                            <a href="#" class="xen-tiep">Xem tiep</a>
-                        </div>
-                    </div>
-                </div>
+            </c:forEach>
             </div>
         </div>
         <div class="col-md-offset-1 col-md-3 hidden-sm hidden-xs ">
@@ -194,33 +131,13 @@
                     </blockquote>
                 </div>
             </div>
-            <div class="top-news">
-                <div class="wrap-topnews">
-                    <div class="content">
-                        <div class="header">Top News</div>
-                        <div class="content-link">
-                            <ul>
-                                <li><a href="#">Tin mot</a></li>
-                                <li><a href="#">tin hai</a></li>
-                                <li><a href="">tin ba</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
 <div class="btn-chuyentrang">
     <div class="bnt-group">
-        <button type="button" class="btn-primary"> Trang đầu</button>
         <button type="button"> <<</button>
-        <button type="button" class="btn-number"> 1</button>
-        <button type="button" class="btn-number"> 2</button>
-        <button type="button" class="btn-number"> 3</button>
-        <button type="button"> ...</button>
         <button type="button" id="btn-next"> >></button>
-        <button type="button" class="btn-primary"> Trang cuối</button>
     </div>
 </div>
 <div class="footer">

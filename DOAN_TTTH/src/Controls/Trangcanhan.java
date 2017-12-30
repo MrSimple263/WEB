@@ -24,7 +24,7 @@ public class Trangcanhan extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DAO dao=new DAO();
 		Connection con=null;
-		User user=new User();
+		Model.User user=new Model.User();
 		con=dao.CON();
 		String query="select * from users";
 		try{

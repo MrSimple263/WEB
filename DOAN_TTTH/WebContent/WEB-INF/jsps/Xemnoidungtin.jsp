@@ -1,18 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
+      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <title>Trang Tin Tuc</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styleMonHoc.css">
-    <link rel="stylesheet" href="css/magic.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Title</title>
+    <link rel="stylesheet" href="css/magic.min.css">
+
 </head>
 <body>
+<div class="Header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <img src="http://lichdaotao.net/Static/Upload/Cover/14_11_2013_08_10_24_LOGO-T3H.jpg" alt="imgnotfound"
+                     id="img-logo">
+            </div>
+            <div class="col-md-offset-6 col-md-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <nav class=" navbar">
     <div class="container">
         <div class="navbar-header">
@@ -27,51 +47,50 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="nav navbar-nav">
                 <li><a href="TrangXemMonHoc">Chương trình dào tạo</a></li>
-                <li><a href="TinTuc">Tin tức</a></li>
+                <li><a href="XemTinTuc">Tin tức</a></li>
                 <li><a href="#">Liên hệ</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="login.html"><span class="glyphicon glyphicon-log-in" id="bnt-login"></span> Login</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <div class="container">
-	<c:forEach items="${groups}" var="gr">
-	<div class="row">
-        <div class="col-md-12">
-            <div class="panel">
-                <div class="panel-heading"><h2>${gr.name}</h2></div>
-                <div class="panel-body">
-                    <div class="container">
-                        <div class="row">
-                        	<c:forEach items="${gr.subjects}" var="sb">
-                        		<div class="col-md-3 col-xs-4 magictime ">
-                                <div class="panel panel-child">
-                                    <div class="panel-body">
-                                    <a href="XemInforMonHoc?id=${sb.idsubject}">
-                                    	<img src="imgsubject/${sb.img}" alt="image not found" class="img-responsive">
-                                    </a>
-                                    </div>
-                                    <div class="panel-footer" style="text-align: center">${sb.name}</div>
-                                </div>
-                            </div>
-                        	</c:forEach>  
-                        </div>
-                    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="tin-tuc">
+            	${news}
+            </div>
+        </div>
+        <div class="col-md-offset-1 col-md-3 hidden-sm hidden-xs ">
+            <div id="fb-root">
+                <script>(function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.10';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+                <div class="fb-page" data-href="https://www.facebook.com/Trungtamtinhockhtn/"
+                     data-tabs="timeline"
+                     data-small-header="false"
+                     data-adapt-container-width="true"
+                     data-hide-cover="false"
+                     data-show-facepile="true"
+                     data-width="300"
+                     data-height="400">
+                    <blockquote cite="https://www.facebook.com/Trungtamtinhockhtn/" class="fb-xfbml-parse-ignore">
+                        <a href="https://www.facebook.com/Trungtamtinhockhtn/">Trung Tâm Tin Học - ĐH Khoa Học Tự Nhiên
+                            TPHCM</a>
+                    </blockquote>
                 </div>
             </div>
         </div>
     </div>
-</c:forEach>
 </div>
 <div class="footer">
     <div class="jumbotron">
-        
+        <div class="container">
             <div class="row">
-            <div class="col-md-1">
-            </div>
                 <div class="col-md-3">
                     <h3>Trụ sở chính</h3>
                     <div>---------------------------------------</div>
@@ -103,9 +122,9 @@
                 Copyright © Trung Tâm Tin Học
             </div>
         </div>
+    </div>
 </div>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/JSfile.js"></script>
 </body>
 </html>

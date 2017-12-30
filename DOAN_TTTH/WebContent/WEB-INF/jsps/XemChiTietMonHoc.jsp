@@ -22,15 +22,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+            <a class="navbar-brand" href="Trangchu"><span class="glyphicon glyphicon-home"></span></a>
         </div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Lich khai giảng</a></li>
-                <li><a href="#">Chương trình dào tạo</a></li>
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Tin tức</a></li>
-                <li><a href="#">Hướng dẫn thanh toán </a></li>
+                <li><a href="TrangXemMonHoc">Chương trình dào tạo</a></li>
+                <li><a href="XemTinTuc">Tin tức</a></li>
                 <li><a href="#">Liên hệ</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

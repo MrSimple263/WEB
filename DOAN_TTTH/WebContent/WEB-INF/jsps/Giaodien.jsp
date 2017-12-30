@@ -57,7 +57,7 @@ $(document).ready(function() {
 }
 .navbar {
     margin-bottom: 0;
-    background-color: #f4511e;
+    background-color: #11842e;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
@@ -72,7 +72,7 @@ $(document).ready(function() {
     color: #333;
   }
 #menu{
-    background-color:dodgerblue;
+    background-color:#11842e;
 }
 #text{
     color: #FFF;
@@ -346,11 +346,10 @@ form button {
     <div class="collapse navbar-collapse" id="myNavbar" >
       <ul class="nav navbar-nav" >
                 <li><a href="TrangXemMonHoc" id="text">Chương trình đào tạo</a></li>
-                <li><a href="TrangTinTuc.jsp" id="text">Tin tức</a></li>
+                <li><a href="XemTinTuc" id="text">Tin tức</a></li>
                 <li><a href="#" id="text">Liên hệ</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="Dangki.jsp"id="text"><span class="glyphicon glyphicon-user" id="text"></span> Sign Up</a></li>
         <li><a href="#" class="overlayLink" data-action="login-form.html" style="color:#FFF">   
              <span  class="glyphicon glyphicon-log-in"  data-toggle="modal" data-target="#myModal">Login</span>
                <!-- Modal -->
@@ -381,8 +380,7 @@ form button {
                    </div>
                    
                  </div>
-               </div>
-           <li><a href="TrangQuanLi.jsp"id="text"><span class="glyphicon glyphicon-pencil"></span> Admin</a></li>            
+               </div>           
         </ul>
     </div>
   </div>

@@ -76,7 +76,7 @@ public class SubjectEdit extends HttpServlet {
 			PreparedStatement stm=con.prepareStatement(query);
 			stm.setInt(1, id);
 			stm.setString(2, name.trim());
-			stm.setString(3, filename.trim());
+			stm.setString(3, filename);
 			stm.setInt(4, idgroup);
 			stm.setString(5, infor.trim());
 			stm.executeUpdate();
