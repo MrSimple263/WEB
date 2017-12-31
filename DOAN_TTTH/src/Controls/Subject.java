@@ -42,9 +42,6 @@ public class Subject extends HttpServlet {
 		request.setAttribute("subject", subjects);
 		request.getRequestDispatcher("WEB-INF/jsps/TrangQuanLiMonHoc.jsp").forward(request, response);
 	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		doGet(request, response);
-	}
+	
 
 }

@@ -50,7 +50,7 @@
           <div class="col-md-4">
                 <div class="wrap" style="background-color:MediumSeaGreen;">
                 	<div class="glyphicon glyphicon-list" ></div>
-                	<a href="User?id=${id}"> 
+                	<a href="Userclass?id=${id}"> 
                 		Quản Lí Học Viên
                 	</a>
                 	</div>

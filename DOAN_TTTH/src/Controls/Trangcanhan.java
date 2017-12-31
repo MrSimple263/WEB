@@ -66,8 +66,4 @@ public class Trangcanhan extends HttpServlet {
 		
 		request.getRequestDispatcher("/WEB-INF/jsps/TrangThongTinCaNhan.jsp").forward(request, response);
 	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
-
 }
